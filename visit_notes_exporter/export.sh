@@ -18,12 +18,13 @@
 # Aprima's patient notes bulk export function is broken. This script let's a user with access to the DBMS to quickly export patient visit notes.
 
 # Prompt and read user input for a number of variables.
-read -p 'Sqsh user name (e.g. "domain\nimrod")? ' user
+read -p 'Sqsh user name (e.g. "domain\\nimrod")? ' user
 
 read -p 'Patient first name? ' px_FirstName
 read -p 'Patient last name? ' px_LastName
 
-read -p 'Output folder (e.g. "/home/work_two/work/TrueNorthDecrypt/scripts/aprima-scripts/visit_notes_exporter/rtf_depository/FirstName_LastName/")? ' output_folder
+read -p 'Output folder (e.g. "/home/work_two/work/TrueNorthDecrypt/scripts/aprima-scripts/visit_notes_exporter/rtf_depository")? ' output_folder
+output_folder="${output_folder}/${px_FirstName}_${px_LastName}"
 
 read -p 'Doctor first name? ' rx_FirstName
 read -p 'Doctor last name? ' rx_LastName
