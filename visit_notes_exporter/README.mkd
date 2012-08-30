@@ -1,0 +1,23 @@
+Visit Notes Exporter
+====================
+
+Exports the visit notes from Aprima's DBMS.
+
+Motivation
+----------
+
+After we switched from Aprima to SuiteMed, one of our physicians was audited by Blue Cross (an insurance provider). Unfortunately, the export patient data function was broken, and with our service agreement terminated, we couldn't have their tech support fix it.
+
+Accordingly, I wrote this script. It pulls the patient visit notes directly from Aprima's DBMS.
+
+Usaage
+------
+
+Just run the program and follow the prompts.
+
+		cd PATH/TO/visit_notes_exporter
+		./export.sh
+
+Be aware, this program makes use of sqsh, so be sure to have it properly installed, that you have permissions, etc.
+
+For security purposes, you are prompted at every sqsh command for your password. It's a bit of a PITA, but, like I said, it's a security precaution.
