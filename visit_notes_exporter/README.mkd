@@ -10,7 +10,7 @@ After we switched from Aprima to SuiteMed, one of our physicians was audited by 
 
 Accordingly, I wrote this script. It pulls the patient visit notes directly from Aprima's DBMS.
 
-Usaage
+Usage
 ------
 
 Just run the program and follow the prompts.
@@ -19,5 +19,3 @@ Just run the program and follow the prompts.
 		./export.sh
 
 Be aware, this program makes use of sqsh, so be sure to have it properly installed, that you have permissions, etc.
-
-For security purposes, you are prompted at every sqsh command for your password. It's a bit of a PITA, but, like I said, it's a security precaution.
