@@ -11,7 +11,7 @@ After we switched from Aprima to SuiteMed, one of our physicians was audited by 
 Accordingly, I wrote this script. It pulls the patient visit notes directly from Aprima's DBMS.
 
 Usage
-------
+-----
 
 Just run the program and follow the prompts.
 
@@ -19,3 +19,8 @@ Just run the program and follow the prompts.
 		./export.sh
 
 Be aware, this program makes use of sqsh, so be sure to have it properly installed, that you have permissions, etc.
+
+CAUTION
+-------
+
+Make sure that the connection between Microsoft SQL Server and the client is secure!!! If the above function is run on an unsecure connection, the data transmitted can be sniffed with a packet analyzer! Given that this data is *Protected Health Information*, you need to take great care that it is kept secure! 
