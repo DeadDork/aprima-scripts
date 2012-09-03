@@ -1,7 +1,7 @@
-How to export emails from Aprima for Mailchimp
-==============================================
+Email Exporter
+==============
 
-A script to export all of the emails in Aprima (to import them into MailChimp).
+A script to export all of the emails in Aprima (and in particular to import them into MailChimp).
 
 Usage
 -----
