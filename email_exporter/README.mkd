@@ -1,0 +1,27 @@
+How to export emails from Aprima for Mailchimp
+==============================================
+
+A script to export all of the emails in Aprima (to import them into MailChimp).
+
+Usage
+-----
+
+It's pretty simple: run the script with sqsh, then follow Mailchimp's file import directions.
+
+Two ways to run the sqsh script:
+
+1.	From within sqsh:
+
+		\loop -i /PATH/TO/SCRIPT/export.sqsh > /PATH/TO/OUTPUT/aprima_email_export_for_mailchimp.txt
+
+	Be sure to change '/PATH/TO/SCRIPT/' and '/PATH/TO/OUTPUT/' to the correct directory paths, e.g.
+
+		\loop -i /home/work_two/work/TrueNorthDecrypt/scripts/test/aprima-email-export_for_mailchimp/export.sqsh > /home/work_two/work/TrueNorthDecrypt/scripts/test/aprima-email-export_for_mailchimp/aprima_email_export_for_mailchimp.txt
+
+2.	Directly from BASH:
+
+		sqsh -S SERVER -U USER -i /PATH/TO/SCRIPT/export.sqsh -o /PATH/TO/OUTPUT/aprima_email_export_for_mailchimp.txt
+
+	Be sure to change '/PATH/TO/SCRIPT/' and '/PATH/TO/OUTPUT/' to the correct directory paths, e.g.
+
+		sqsh -S tnh_mss -U 'domain\nimrod' -i /home/work_two/work/TrueNorthDecrypt/scripts/test/aprima-email-export_for_mailchimp/export.sqsh  -o /home/work_two/work/TrueNorthDecrypt/scripts/test/aprima-email-export_for_mailchimp/aprima_email_export_for_mailchimp.txt

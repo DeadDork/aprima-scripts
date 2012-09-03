@@ -1,0 +1,28 @@
+\set bcp_rowsep=""
+\set bcp_colsep="	"
+select
+		email1,
+		FirstName,
+		LastName
+	from
+		prm.dbo.person
+	where
+		email1 is not null
+	and
+		Firstname is not null
+	and
+		Lastname is not null
+\go -m bcp
+select
+		email2,
+		FirstName,
+		LastName
+	from
+		prm.dbo.person
+	where
+		email2 is not null
+	and
+		Firstname is not null
+	and
+		Lastname is not null
+\go -m bcp
