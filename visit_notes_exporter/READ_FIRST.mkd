@@ -1,0 +1,4 @@
+NOTICE
+======
+
+Upon a closer look, I've realized that this visit notes exporter fails to bring over quiiiiiiite a lot of data. Apparently Aprima does this incredibly shitty thing where they store the visit notes data across some half dozen tables. I'll eventually figure it out, but for now this particular script is a dud!!!
