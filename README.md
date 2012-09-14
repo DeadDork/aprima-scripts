@@ -26,3 +26,10 @@ Specific usage usage details accompany each script.
 Good luck!
 
 (And I'm so sorry that you're using this piece of crap EMR...)
+
+Legal
+-----
+
+All of the code and documentation here is written and copyrighted by me, the author. Everyone and anyone is free to use it, and make any changes to it as they see fit. However, it must be within the terms of the gpl-3. Essentially, it boils down to: you can charge for providing a service with the code, but you can't charge anyone for the code itself; also, that you'll give credit where credit is due; and finally, that if something breaks--not my fault!!!
+
+Also, an indemnification: my employer is aware of these scripts (after all, I wrote them for work), and is aware that they're licensed with a gpl-3, and that they're online--but the opinions, etc. are all mine.
