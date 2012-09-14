@@ -1,0 +1,28 @@
+Aprima File Decompressor
+========================
+
+Decompresses the files that were compressed when Aprima imported them.
+
+Motivation
+----------
+
+There is no easy way to export out all of one patient's documents--let alone the documents of all the patients--as the export function in Aprima was kaput last I checked. Moreover, with our service agreement terminated, I was forced to write an export function myself in order to get patient files out of the data base, which I did <https://github.com/deaddork.com/aprima-scripts/tree/master/patient_attachments_exporter>.
+
+To make the headache even worse, many (if not most) of the files in Aprima's DB are compressed, and there's no documentation determining which compression algorithms was used.
+
+That's where this handy little Perl script comes in: it identifies the common .NET compression algorithms of every file in a folder called 'compressed', and decompress the file accordingly!
+
+Usage
+-----
+
+1.	Before the code can be compiled, you have to make sure that there is a directory on your system with the compressed files. Further, this directory must have two subdirectories: a) *compressed* b) *uncompressed*. Obviously, all compressed files should be in the \<compressed\> directory.
+
+2.	Compile the code.
+
+		perl inflater.pl
+
+3.	At the prompt, enter the path to the directory with the \<compressed\> and \<uncompressed\> sub directories, e.g.
+
+		</home/work_two/samba/share/TNH/projects/data_transfer/single_patient_file_export/patients/LASTNAME_FIRSTNAME/>
+
+And that's that! All your mystery compression files will be decompressed and moved to \<uncompressed\>, with a copy of the compressed file left over in compressed for QC.
