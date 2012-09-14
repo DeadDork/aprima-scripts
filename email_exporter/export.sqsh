@@ -1,4 +1,28 @@
+# FYI it's not a typo: sqsh needs a space after the # to recognize it as a comments.
+
+# ###############################################################################
+#    This sqsh script exports all of email addresses & names in Aprima.         #
+#                                                                               #
+#    Copyright (C) 2012 Nimrod Omer <https://www.github.com/DeadDork>.          #
+#                                                                               #
+#    This program is free software: you can redistribute it and/or modify       #
+#    it under the terms of the GNU General Public License as published by       #
+#    the Free Software Foundation, either version 3 of the License, or          #
+#    (at your option) any later version.                                        #
+#                                                                               #
+#    This program is distributed in the hope that it will be useful,            #
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of             #
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the              #
+#    GNU General Public License for more details.                               #
+#                                                                               #
+#    You should have received a copy of the GNU General Public License          #
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.      #
+# ###############################################################################
+
 \set bcp_rowsep=""
+
+# You should also get your employer (if you work as a programmer) or school,
+# if any, to sign a "copyright disclaimer" for the program, if necessary.
 \set bcp_colsep="	"
 select
 		email1,
