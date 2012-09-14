@@ -6,7 +6,7 @@ Decompresses the files that were compressed when Aprima imported them.
 Motivation
 ----------
 
-There is no easy way to export out all of one patient's documents--let alone the documents of all the patients--as the export function in Aprima was kaput last I checked. Moreover, with our service agreement terminated, I was forced to write an export function myself in order to get patient files out of the data base, which I did <https://github.com/deaddork.com/aprima-scripts/tree/master/patient_attachments_exporter>.
+There is no easy way to export out all of one patient's documents--let alone the documents of all the patients--as the export function in Aprima was kaput last I checked. Moreover, with our service agreement terminated, I was forced to write an export function myself in order to get patient files out of the data base, which I did <https://github.com/DeadDork/aprima-scripts/tree/master/patient_attachments_exporter>.
 
 To make the headache even worse, many (if not most) of the files in Aprima's DB are compressed, and there's no documentation determining which compression algorithms was used.
 
