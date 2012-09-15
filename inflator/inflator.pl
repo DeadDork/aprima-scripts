@@ -15,7 +15,7 @@ my $compressed_dir = $top_level_dir . "compressed/";
 my $uncompressed_dir = $top_level_dir . "uncompressed/";
 
 # Opens the compressed directory & decompresses any files it finds in it into the the <uncompressed> directory.
-opendir(my $dir_handle, $compressed_dir) or die "Couldn't open $input: $!\n";
+opendir(my $dir_handle, $compressed_dir) or die "Couldn't open $compressed_dir: $!\n";
 while(readdir $dir_handle) {
 
 	# The compressed file.
