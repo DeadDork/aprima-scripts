@@ -1,3 +1,4 @@
 *.swo
 *.swp
 test/
+patient_file_notes/
