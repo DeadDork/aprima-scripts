@@ -17,7 +17,7 @@ Before compiling the script, you want to make sure that you have everything read
 
 		D:\data_transfer\working_blob_export.fmt
 
-2.	Open *patient_attachment_exporter.pl* with your favorite text editor, and change the value of $fmt to wherever you have *working_blob_export.fmt*. E.G.
+2.	Open **patient_attachment_exporter.pl** with your favorite text editor, and change the value of $fmt to wherever you have **working_blob_export.fmt**. E.G.
 
 		my $fmt = "D:\data_transfer\working_blob_export.fmt";
 
@@ -27,7 +27,7 @@ Before compiling the script, you want to make sure that you have everything read
 
 	[UnixODBC & FreeTDS](http://www.unixodbc.org/doc/FreeTDS.html)
 
-	(Installing Perl Modules](http://www.cyberciti.biz/faq/how-do-i-install-a-perl-module/) (You might need to install with admin privileges depending on your setup.)
+	[Installing Perl Modules](http://www.cyberciti.biz/faq/how-do-i-install-a-perl-module/) (You might need to install with admin privileges depending on your setup.)
 
 	[DBI](http://search.cpan.org/~timb/DBI/DBI.pm)
 
@@ -72,9 +72,9 @@ Usage
 
 		D:\data_transfer\single_patient_export\Madden_John\
 
-8.	Once you hit *ENTER*, the script will hopefully execute properly. If there are no errors, it most likely did. Confirm by opening up \<patient_file_notes\> (the files here are collations of all of the notes in Aprima associated with the exported files), then by opening up the target directory in Windows. In the former, you should see a file in the form of *Lastname_Firstname.txt*, and in the latter you should have a bunch of files in either \<compressed\> or \<uncompressed\> (or both).
+8.	Once you hit **ENTER**, the script will hopefully execute properly. If there are no errors, it most likely did. Confirm by opening up \<patient_file_notes\> (the files here are collations of all of the notes in Aprima associated with the exported files), then by opening up the target directory in Windows. In the former, you should see a file in the form of **Lastname_Firstname.txt**, and in the latter you should have a bunch of files in either \<compressed\> or \<uncompressed\> (or both).
 
-9.	Finish up by decompressing all of the compressed files these files with another handy script I wrote called (inflator)[https://github.com/DeadDork/aprima-scripts/tree/master/inflator]. Doing so goes beyond the scope of this README, though.
+9.	Finish up by decompressing all of the compressed files these files with another handy script I wrote called [inflator](https://github.com/DeadDork/aprima-scripts/tree/master/inflator). Doing so goes beyond the scope of this README, though.
 
 And you're done!
 
