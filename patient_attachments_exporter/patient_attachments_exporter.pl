@@ -17,7 +17,7 @@ my $LastName; # The patient's last name.
 my @PHI; # The patient's fuller Protected Health Information.
 my $PUid; # The patient's unique identifier.
 my @AttachData; # An Array of Arrays that holds the attachment data, e.g. file name, file extension, etc.
-my $AttachPath; # The destination directory's full path.
+my $AttachPath = "D:\\data_transfer\\single_patient_file_export"; # The destination directory's full path.
 my $fmt = "D:\\data_transfer\\working_blob_export.fmt"; # The BCP format file path & name.
 
 #
@@ -25,7 +25,7 @@ my $fmt = "D:\\data_transfer\\working_blob_export.fmt"; # The BCP format file pa
 #
 
 # The data source.
-print "Enter the data source name (check in </etc/odbc.ini>, e.g. 'TNH_TEST_MSS)': "
+print "Enter the data source name (check in </etc/odbc.ini>, e.g. 'TNH_TEST_MSS)': ";
 chomp(my $data_source = <>);
 
 # The user name for the DBMS.
@@ -140,8 +140,10 @@ if ($dbh) {
 	#
 
 	# Get the export directory path.
-	print 'Enter the full directory path you want the attachments exported to. Note, the path will most likely have to be on the same drive as the DBMS. Be sure that the directory exists--AND THAT IT HAS THE TWO SUBDIRECTORIES <compressed> AND <uncompressed>!!! E.G. <D:\\nimi_test\\data_transfer\\single_patient_file_export\\Doe_John\\>: ';
-	chomp($AttachPath = <>); 
+	#print 'Enter the full directory path you want the attachments exported to. Note, the path will most likely have to be on the same drive as the DBMS. Be sure that the directory exists--AND THAT IT HAS THE TWO SUBDIRECTORIES <compressed> AND <uncompressed>!!! E.G. <D:\\nimi_test\\data_transfer\\single_patient_file_export\\Doe_John\\>: ';
+	print "Enter the directory name you want to export the charts into (N.B. be sure that this directory exists, that it exists in <D:\\data_transfer\\single_patient_file_export\\>, and that it has the two subdirectories <compressed> and <uncompressed>, e.g. Doe_John): ";
+	chomp(my $PatientAttachDir = <>); 
+
 
 	# Get the necessary data to export the patient's BLOBs.
 	my $sql = "
@@ -154,9 +156,9 @@ if ($dbh) {
 					when
 							a.CompressionUid is not null
 						then
-							'compressed\\'
+							'compressed'
 						else
-							'uncompressed\\'
+							'uncompressed'
 				end
 			from
 				prm.dbo.RelAttachmentGroup as RAG 
@@ -190,13 +192,15 @@ if ($dbh) {
 	}
 
 	# Create the <notes> file handle to print the notes to.
+	$FirstName =~ s/\W+/_/g; # Replaces obnoxious characters with an underscore (e.g. white spaces, /'s, etc.).
+	$LastName =~ s/\W+/_/g;
 	open(my $notes, ">>", "patient_file_notes/${LastName}_${FirstName}.txt") or die "Can't open ${LastName}_${FirstName}_file_notes.txt: $!\n"; 
 
 	# Loop through all of the attachment data.
 	for (0 .. $#AttachData) {
 
 		# Fix any DB stupidity.
-		$AttachData[$_][1] =~ s/\W+/_/g; # Replaces obnoxious characters with an underscore (e.g. white spaces, /'s, etc.).
+		$AttachData[$_][1] =~ s/\W+/_/g;
 		$AttachData[$_][1] =~ s/[[:alpha:]](\d{8})/$1/; # Dr. Sultana wanted the designating prefix removed from the file names. E.G. L20110924 --> 20110924.
 		$AttachData[$_][3] =~ s/^([^\.])/.$1/; # Makes sure the file extension suffix has a '.' in it.
 
@@ -211,8 +215,9 @@ if ($dbh) {
 					'where ' +
 							'AttachmentUid = ''$AttachData[$_][0]''\" ' +
 				'QueryOut ' +
-					'$AttachPath' +
-					'$AttachData[$_][4]' +
+					'$AttachPath' + '\\' +
+					'$PatientAttachDir' + '\\' +
+					'$AttachData[$_][4]' + '\\' +
 					'$AttachData[$_][1]' +
 					'$AttachData[$_][3] ' +
 				'-T ' +
