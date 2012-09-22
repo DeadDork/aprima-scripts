@@ -19,7 +19,7 @@ Before compiling the script, you want to make sure that you have everything read
 
 2.	Open *patient_attachment_exporter.pl* with your favorite text editor, and change the value of $fmt to wherever you have *working_blob_export.fmt*. E.G.
 
-		my $fmt = "D:\\data_transfer\\working_blob_export.fmt";
+		my $fmt = "D:\data_transfer\working_blob_export.fmt";
 
 	Save & exit.
 
@@ -48,11 +48,13 @@ Usage
 
 	b)	\<Madden_John\uncompressed\>
 
-3.	Compile the script.
+3.	Also make sure that the script's <.> directory has a directory called <patient_file_notes> inside.
+
+4.	Compile the script.
 
 		perl patient_attachments_exporter.pl
 
-4.	You will be prompted for the following:
+5.	You will be prompted for the following:
 
 	a)	Your data source.
 
@@ -64,15 +66,15 @@ Usage
 
 	e)	The patient's last name.
 
-5.	Then, if everything is copacetic, you will be presented with a text menu. Enter the row number of the patient whose files you want to export.
+6.	Then, if everything is copacetic, you will be presented with a text menu. Enter the row number of the patient whose files you want to export.
 
-6.	Following this, you will be prompted to enter the full directory path for the folder you created in (1). That is,
+7.	Following this, you will be prompted to enter the full directory path for the folder you created in (1). That is,
 
 		D:\data_transfer\single_patient_export\Madden_John\
 
-7.	Once you hit *ENTER*, the script will hopefully execute properly. If there are no errors, it most likely did. Confirm by opening up \<patient_file_notes\> (the files here are collations of all of the notes in Aprima associated with the exported files), then by opening up the target directory in Windows. In the former, you should see a file in the form of *Lastname_Firstname.txt*, and in the latter you should have a bunch of files in either \<compressed\> or \<uncompressed\> (or both).
+8.	Once you hit *ENTER*, the script will hopefully execute properly. If there are no errors, it most likely did. Confirm by opening up \<patient_file_notes\> (the files here are collations of all of the notes in Aprima associated with the exported files), then by opening up the target directory in Windows. In the former, you should see a file in the form of *Lastname_Firstname.txt*, and in the latter you should have a bunch of files in either \<compressed\> or \<uncompressed\> (or both).
 
-8.	Uncompress, inflate, zip, etc. these files with another handy script I wrote called (inflator)[https://github.com/DeadDork/aprima-scripts/tree/master/inflator].
+9.	Finish up by decompressing all of the compressed files these files with another handy script I wrote called (inflator)[https://github.com/DeadDork/aprima-scripts/tree/master/inflator]. Doing so goes beyond the scope of this README, though.
 
 And you're done!
 
